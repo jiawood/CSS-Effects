@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <section>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </section>
+  <style>
+    section {
+      height: 200px;
+      width: 200px;
+      margin: auto;
+      position: relative;
+      animation: ro 5s infinite alternate;
+      transform-style: preserve-3d;
+      transform: rotateX(20deg) rotateY(20deg);
+      xbackground-color: gray;
+    }
+
+    div {
+      text-align: center;
+      line-height: 100px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+      height: 100px;
+      width: 100px;
+      xtransform: rotateX(20deg) rotateY(20deg);
+      transform-style: preserve-3d;
+      opacity: .4;
+
+    }
+
+    div:nth-child(1) {
+      transform: translateZ(50px);
+      background-color: red;
+    }
+
+    div:nth-child(2) {
+      transform: translateZ(-50px);
+      background-color: yellow;
+
+    }
+
+    div:nth-child(3) {
+      transform: translateX(-50px) rotateY(90deg);
+      background-color: pink;
+
+    }
+
+    div:nth-child(4) {
+      transform: translateX(50px) rotateY(-90deg);
+      background-color: white;
+
+    }
+
+    div:nth-child(5) {
+      transform: translateY(-50px) rotateX(90deg);
+      background-color: gold;
+
+    }
+
+    div:nth-child(6) {
+      transform: translateY(50px) rotateX(-90deg);
+      background-color: tan;
+
+    }
+
+    @keyframes ro {
+      from {
+        transform: rotateX(20deg) rotateY(20deg);
+      }
+
+      to {
+        transform: rotateX(380deg) rotateY(520deg);
+      }
+    }
+  </style>
+</body>
+
+</html>
