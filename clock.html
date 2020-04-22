@@ -85,7 +85,7 @@
     }
 
     .seconds {
-      background: #000;
+      xbackground: #000;
       height: 45%;
       width: 1%;
       left: 49.5%;
@@ -93,6 +93,7 @@
       top: 14%;
       transform-origin: 50% 80%;
       z-index: 8;
+
     }
 
     @keyframes rotate {
@@ -108,7 +109,7 @@
 
       20%,
       to {
-        transform: rotate(5deg);
+        transform: rotate(6deg);
       }
     }
 
@@ -117,11 +118,12 @@
     }
 
     .minutes-container {
-      animation: rotate 3600s -3000s infinite steps(3600);
+      animation: rotate 3600s -3000s infinite steps(60);
     }
 
     .seconds-container {
       animation: rotate 60s -30s infinite steps(60);
+
     }
 
     .seconds::after {
@@ -131,7 +133,7 @@
       width: 100%;
       background-color: #000;
       transform-origin: 50% 80%;
-      animation: seconds-shake 1s inifite cubic-bezier(0.4, 2.08, 0.55, 0.44);
+      animation: seconds-shake 1s infinite cubic-bezier(0.4, 2.08, 0.55, 0.44);
     }
 
     .minutes::after {
@@ -141,7 +143,7 @@
       width: 100%;
       background-color: #000;
       transform-origin: 50% 80%;
-      animation: seconds-shake 1s inifite cubic-bezier(0.4, 2.08, 0.55, 0.44);
+      animation: xxseconds-shake 1s infinite cubic-bezier(0.4, 2.08, 0.55, 0.44);
     }
   </style>
   <div class="clock-container">
