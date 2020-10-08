@@ -96,12 +96,14 @@
 
     }
 
+    /*旋转，就是旋转360deg，转一圈*/
     @keyframes rotate {
       100% {
         transform: rotate(360deg);
       }
     }
 
+    /*秒针要shake，原本在100%的时候转6deg，现在给一个在20%的时刻转动的效果*/
     @keyframes seconds-shake {
       from {
         transform: rotate(0deg);
@@ -114,15 +116,15 @@
     }
 
     .hours-container {
-      animation: rotate 43200s -30000s infinite linear;
+      animation: rotate 43200s 0s infinite linear;
     }
 
     .minutes-container {
-      animation: rotate 3600s -3000s infinite steps(60);
+      animation: rotate 3600s 0s infinite steps(60);
     }
 
     .seconds-container {
-      animation: rotate 60s -30s infinite steps(60);
+      animation: rotate 60s 0s infinite steps(60);
 
     }
 
@@ -159,6 +161,24 @@
       </div>
     </div>
   </div>
+  <script>
+    let hs
+    let ms
+    let s
+    let time
+    window.onload = () => {
+      time = new Date()
+      s = time.getSeconds()
+      ms = time.getMinutes() * 60 + s
+      hs = time.getHours() * 3600 + ms
+      let hours = document.querySelector('.hours-container')
+      hours.style.animationDelay = -hs + 's'
+      let minutes = document.querySelector('.minutes-container')
+      minutes.style.animationDelay = -ms + 's'
+      let seconds = document.querySelector('.seconds-container')
+      seconds.style.animationDelay = -s + 's'
+    }
+  </script>
 </body>
 
 </html>

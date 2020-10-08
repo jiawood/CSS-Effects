@@ -10,15 +10,17 @@
   }
 }
 
-*{
-  background-color: rgba(0,0,0,0.1);
-}
+// *{
+//   background-color: rgba(0,0,0,0.1);
+// }
 
 .slider{
   width:@slider-width;
   height:@slider-height;
   margin:auto;
+  margin-top: 200px;
   position: relative;
+  // 紧接的input不显示
   >input{
   display:none;
   }
@@ -54,8 +56,11 @@
   >input:nth-child(2):checked ~ .slice-container .slice span:nth-child(2),
   >input:nth-child(3):checked ~ .slice-container .slice span:nth-child(3),
   >input:nth-child(4):checked ~ .slice-container .slice span:nth-child(4){
+    //点击之后点击的元素left从-100% --> 0 这是通过缓动实现的，给了一个transition:时间
+    //非点击元素执行一次动画
     left: 0;
-    animation:none;
+    animation:none;  //当条件满足时，执行一次动画
+    transition: 1s;
     z-index:1;
   }
 
@@ -87,8 +92,9 @@
         height: 100%;
         display: block;
         left: -100%;
-        transition:1s;
+        xtransition:1s;
         animation:leave-right 1s;
+        z-index: 1;
         &:nth-child(1){
           background-image: url(https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/1.jpg);
         }
